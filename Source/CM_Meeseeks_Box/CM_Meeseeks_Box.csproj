@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>CM_Meeseeks_Box</RootNamespace>
+    <AssemblyName>CM_Meeseeks_Box</AssemblyName>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+
+    <!-- Krafs.Rimworld.Ref needs to know where RimWorld is installed to build reference
+         assemblies from your actual game files. It auto-detects the common Steam paths;
+         if it can't find yours, set GameDir below to your RimWorld install folder
+         (the one containing RimWorldWin64_Data / RimWorldMac.app / etc). -->
+    <!-- <GameDir>C:\Program Files (x86)\Steam\steamapps\common\RimWorld</GameDir> -->
+    <RimWorldVersion>1.6</RimWorldVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" />
+    <PackageReference Include="Lib.Harmony" Version="2.3.*" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+C:\Users\etwic\Desktop\New folder (20)\Mister Meeseeks\Assemblies\CM_Meeseeks_Box.dll
+C:\Users\etwic\Desktop\New folder (20)\Mister Meeseeks\Assemblies\CM_Meeseeks_Box.pdb
+C:\Users\etwic\Desktop\New folder (20)\Mister Meeseeks\Source\CM_Meeseeks_Box\obj\Release\CM_Meeseeks_Box.csproj.AssemblyReference.cache
+C:\Users\etwic\Desktop\New folder (20)\Mister Meeseeks\Source\CM_Meeseeks_Box\obj\Release\CM_Meeseeks_Box.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\etwic\Desktop\New folder (20)\Mister Meeseeks\Source\CM_Meeseeks_Box\obj\Release\CM_Meeseeks_Box.csproj.CoreCompileInputs.cache
+C:\Users\etwic\Desktop\New folder (20)\Mister Meeseeks\Source\CM_Meeseeks_Box\obj\Release\CM_Meeseeks_Box.dll
+C:\Users\etwic\Desktop\New folder (20)\Mister Meeseeks\Source\CM_Meeseeks_Box\obj\Release\CM_Meeseeks_Box.pdb

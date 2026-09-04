@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JpSo0nSPmGc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\etwic\\Desktop\\New folder (20)\\Mister Meeseeks\\Source\\CM_Meeseeks_Box\\CM_Meeseeks_Box.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\etwic\\.nuget\\packages\\krafs.rimworld.ref\\1.6.4871\\krafs.rimworld.ref.1.6.4871.nupkg.sha512",
+    "C:\\Users\\etwic\\.nuget\\packages\\lib.harmony\\2.3.6\\lib.harmony.2.3.6.nupkg.sha512"
+  ],
+  "logs": []
+}
