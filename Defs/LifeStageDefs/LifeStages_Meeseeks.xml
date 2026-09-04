@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Copy of vanilla HumanlikeAdult, minus LifeStageWorker_HumanlikeAdult.
+
+       Meeseeks are created as adults with no prior life stage, so
+       Notify_LifeStageStarted runs with previousLifeStage == null. The Biotech
+       worker dereferences previousLifeStage without a null check (it assumes a
+       pawn grew into adulthood), which throws during pawn generation.
+
+       Everything else matches HumanlikeAdult; developmentalStage defaults to Adult. -->
+
+  <LifeStageDef>
+    <defName>CM_Meeseeks_Box_LifeStage_MeeseeksAdult</defName>
+    <label>adult</label>
+    <visible>false</visible>
+    <reproductive>true</reproductive>
+    <sittingOffset>0.18</sittingOffset>
+    <silhouetteGraphicData>
+      <texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanAdult</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </silhouetteGraphicData>
+  </LifeStageDef>
+
+</Defs>

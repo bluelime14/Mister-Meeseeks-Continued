@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- HAR's old "aliencrowntypes" system was replaced by vanilla HeadTypeDefs.
+       HAR builds the final texture path as <graphicPaths><head><path> + Gender_Name,
+       so a head named "Male_<X>" resolves to Things/Pawn/Meeseeks/Head/Male_<X>. -->
+
+  <HeadTypeDef>
+    <defName>CM_Meeseeks_Box_Head_Male_Happy</defName>
+    <graphicPath>Things/Pawn/Meeseeks/Head/Male_Happy</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef>
+    <defName>CM_Meeseeks_Box_Head_Male_Bliss</defName>
+    <graphicPath>Things/Pawn/Meeseeks/Head/Male_Bliss</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef>
+    <defName>CM_Meeseeks_Box_Head_Male_Normal</defName>
+    <graphicPath>Things/Pawn/Meeseeks/Head/Male_Normal</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef>
+    <defName>CM_Meeseeks_Box_Head_Male_Sad</defName>
+    <graphicPath>Things/Pawn/Meeseeks/Head/Male_Sad</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef>
+    <defName>CM_Meeseeks_Box_Head_Male_Distressed</defName>
+    <graphicPath>Things/Pawn/Meeseeks/Head/Male_Distressed</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+  <HeadTypeDef>
+    <defName>CM_Meeseeks_Box_Head_Male_Kirkland</defName>
+    <graphicPath>Things/Pawn/Meeseeks/Head/Male_Kirkland</graphicPath>
+    <gender>Male</gender>
+  </HeadTypeDef>
+
+</Defs>

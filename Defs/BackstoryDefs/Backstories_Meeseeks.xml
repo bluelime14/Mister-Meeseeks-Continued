@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- AlienRace.BackstoryDef was removed when HAR moved to vanilla's BackstoryDef.
+	     Field "baseDescription" is now "description", with [PAWN_nameDef] placeholders. -->
+
+	<BackstoryDef>
+		<defName>BackstoryMeeseeks</defName>
+		<title>Mister</title>
+		<titleShort>Mister</titleShort>
+		<description>[PAWN_nameDef] was created to serve a singular purpose for which they will go to any length to fulfill.</description>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>MeeseeksBackstory</li>
+		</spawnCategories>
+	</BackstoryDef>
+
+</Defs>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>MeeseeksKind</defName>
+		<label>Meeseeks</label>
+		<race>MeeseeksRace</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>MeeseeksBackstory</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<maxGenerationAge>1</maxGenerationAge>
+		<initialResistanceRange>10~20</initialResistanceRange>
+		<initialWillRange>1~4</initialWillRange>
+		<!-- 1.4+ takes skin colour from Biotech melanin genes unless overridden,
+		     which produced normal human skin tones instead of Meeseeks blue.
+		     This matches the "skin" colorChannel in the alien race def. -->
+		<skinColorOverride>RGBA(0.40,0.80,0.93,1)</skinColorOverride>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+
+</Defs>
