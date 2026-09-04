@@ -1,0 +1,107 @@
+﻿## [1.1.0] - 2026-09-03
+
+Port to RimWorld 1.6. Requires Harmony and Humanoid Alien Races built for 1.6.
+
+### Changed
+- Target version is now 1.6 (About.xml)
+- Project converted to an SDK-style .csproj using the Krafs.Rimworld.Ref and
+  Lib.Harmony NuGet packages, targeting net472; added build-1.6.ps1 / build-1.6.sh
+
+### Fixed - code updated for 1.6 API changes
+- Designator_AreaWorkMeeseeks: DraggableDimensions was removed; now uses
+  DrawStyleCategory (Areas), and Designate_Harvest became Designate_HarvestWood
+- MentalState_MeeseeksKillCreator: GetBeginLetterText now returns TaggedString,
+  and MentalStateTick takes a tick delta
+- CompMeeseeksMemory: PostPreApplyDamage now takes DamageInfo by ref, and
+  PostDeSpawn takes a DestroyMode
+- MoteProgressBar_Colored: Thing.Draw was removed; now overrides DrawAt, and
+  exactScale became the computed ExactScale / linearScale pair
+- EditWindow_DebugInspector moved to the LudeonTK namespace
+- Mote_FeedbackGoto click feedback moved to the Fleck system (FleckMaker.Static)
+- Gas_Smoke no longer exists; the spawn/despawn poof sounds now play directly on
+  the pawn. NOTE: the smoke puff visual is gone as a result
+- JobDriver_Kill: GotoCastPosition gained a castPositionInd parameter, and
+  Notify_SlaughteredAnimal became Notify_SlaughteredTarget
+- JobGiver_KillCreator / SavedJob: Job.canBash split into canBashDoors and
+  canBashFences; PathFinder.FindPath became FindPathNow
+- MeeseeksJobSelector_Tame / _Train: the bestFoodSourceOnMap_minNutrition_NewTemp
+  static became a minNutrition parameter, and GetNutrition now takes the eater
+- JobDriver_AcquireEquipment: EquipmentUtility.IsBiocoded moved to
+  CompBiocodable, and the ShieldBelt class check became def.IsShieldThatBlocksRanged
+- MeeseeksJobSelector_DoBill: WorkGiver_DoBill.TryFindBestBillIngredients gained a
+  missingIngredients parameter. This is called by reflection, so it failed only at
+  runtime and left Meeseeks stuck on bill jobs
+- DesignatorUtility rewritten: DesignationManager.allDesignations is now a
+  read-only computed snapshot, so forcing and restoring designations goes through
+  AddDesignation / RemoveDesignation instead of splicing the list directly
+
+### Fixed - Harmony patches retargeted
+- FloatMenuMakerMap.CanTakeOrder became ShouldGenerateFloatMenuForPawn, returning
+  an AcceptanceReport rather than a bool
+- FloatMenuMakerMap.ChoicesAtFor became GetOptions, which now builds the menu once
+  for all selected pawns instead of once per pawn
+- Pawn_PlayerSettings.AreaRestriction became AreaRestrictionInPawnCurrentMap
+- LetterStack.ReceiveLetter gained delayTicks and playSound parameters
+
+### Fixed - defs updated for 1.6
+- MentalStateDefs: removed unspawnedCanDo
+- FactionDefs: removed hairTags
+- PawnKindDef: added the now-required initialResistanceRange and initialWillRange
+- Race statBases: ToxicSensitivity was replaced by its inverse, ToxicResistance
+- Race soundMeleeHitBuilding: Pawn_Melee_Punch_HitBuilding was split into material
+  variants; now uses Pawn_Melee_Punch_HitBuilding_Generic
+- Race now declares renderTree Humanlike. Without it the 1.4 render tree rewrite
+  drew Meeseeks with the animal render tree and threw while drawing
+- Added a Meeseeks-specific adult life stage. The Biotech worker on HumanlikeAdult
+  assumes a previous life stage, which Meeseeks never have
+- PawnKindDef now sets skinColorOverride. Since 1.4 skin colour comes from Biotech
+  melanin genes, so Meeseeks were spawning with ordinary human skin tones
+
+### Fixed - Humanoid Alien Races schema changes
+- alienbodytypes became bodyTypes, aliencrowntypes became headTypes, and
+  useGenderedHeads was removed
+- graphicPaths is now a single object rather than a list
+- hairSettings became styleSettings, keyed by style type
+- AlienRace.BackstoryDef was folded into vanilla BackstoryDef, with
+  baseDescription becoming description
+- Added HeadTypeDefs for the six Meeseeks faces, replacing HAR's removed crown
+  type system
+
+### Fixed - pre-existing bugs
+- Sound defs used AudioGrain_Folder pointed at individual files rather than
+  folders, so no sound ever resolved a grain. All 13 now use AudioGrain_Clip
+- A Meeseeks ordered to press a Meeseeks Box created a new Meeseeks that stayed
+  permanently blocked and could not be given orders. Only the mental-state path
+  ever cleared that block; the ordered path now clears it too
+- Sowing ignored the growing zone's plant selection and used whatever plant the
+  last grower scan happened to leave in WorkGiver_Grower.wantedPlantDef, a static
+  shared with every other pawn. Grower scans now clear it before and after each
+  call, so each cell resolves against its own zone. This also appears to be the
+  cause of Meeseeks idling on maps that were not being viewed
+- GetJobPrimaryTarget could not identify the target of designation-driven jobs
+  (cutting, harvesting, mining) because the temporary designations are gone by the
+  time the job starts. It fell back to guessing and logged a warning on every such
+  job; it now uses the same designation fudge the toil check uses
+
+## [1.0.2] - 2021-01-22
+
+### Fixed
+- Meeseeks voice using excessively high volume
+
+### Added
+- Slider in mod settings for Meeseeks voice volume
+
+
+## [1.0.1] - 2021-01-17
+
+### Fixed
+- Meeseeks moving furniture around
+- Meeseeks unable to select animals for tending
+- Meeseeks unable to complete tending humans
+- Meeseeks doing emergency work automatically
+
+
+## [1.0.0] - 2021-01-16
+
+### Added
+- Initial release
